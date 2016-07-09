@@ -1,0 +1,103 @@
+"""Terminal 1
+$ sudo su -
+# cd OpenNet
+# ./waf_shell.sh
+# cd ../../mininet/examples/opennet
+# python ap-sta-h-sw-nat3.py
+"""
+Terminal 2
+cd ryu
+sudo fuser -k 6633/tcp
+PYTHONPATH=. ./bin/ryu-manager ryu/app/Ryuretic_Intf.py
+
+
+
+"""
+Other Documents:
+mininet/examples/opennet/ICMP_Send.py
+mininet/examples/opennet/ICMP_Listener.py
+mininet/examples/opennet/ARP_Poison.py
+mininet/examples/opennet/Packet_sniffer.py
+
+WAP at Princeton
+
+https://www.net.princeton.edu/wireless-access-points/index.html#natvsbr
+
+NAT Help: 
+https://github.com/mininet/mininet/blob/master/examples/natnet.py
+https://github.com/mininet/mininet/wiki/Network-Address-Translator-%28NAT%29
+
+
+https://www.net.princeton.edu/wireless-access-points/index.html#natvsbr
+
+------------------------------------------Pyretic
+
+"""Terminal 1
+$ sudo su -
+# cd OpenNet
+# ./waf_shell.sh
+# cd ../../mininet/examples/opennet
+# python ap-sta-h-sw-nat3.py
+"""
+"""Terminal 2
+$ cd pyretic
+$ sudo fuser -k 6633/tcp
+$ python pyretic.py -m p0 pyretic.modules.mac_learner
+
+------------------------------------------------
+"""
+/OpenNet/mininet/examples/opennet# python ap-sta-h-sw-nat3.py
+python pyretic.py -m p0 pyretic.modules.NFGC 
+cd pyretic/modules/
+/home/ubuntu/pyretic/pyretic/modules/NFG.py
+
+---------------------------------------Ryu
+cd ryu
+sudo fuser -k 6633/tcp
+#####sudo mn --topo single,3 --mac --switch ovsk --controller remote
+PYTHONPATH=. ./bin/ryu-manager ryu/app/coupler.py
+
+Sending this message
+version: 0x1 msg_type 0xe xid 0x9c5d4a6c OFPFlowMod(actions=[OFPActionOutput(max_len=65509,port=3)],buffer_id=4294967295,command=0,cookie=0,flags=1,hard_timeout=0,idle_timeout=0,match=OFPMatch(dl_dst='\x00\x00\x00\x00\x00\x03',dl_src='\x00\x00\x00\x00\x00\x00',dl_type=0,dl_vlan=0,dl_vlan_pcp=0,in_port=1,nw_dst=0,nw_proto=0,nw_src=0,nw_tos=0,tp_dst=0,tp_src=0,wildcards=4194294),out_port=65535,priority=32768)
+
+-------------------------------------
+Ryu Resources
+http://ryu-zhdoc.readthedocs.org/en/latest/library.html
+https://osrg.github.io/ryu-book/en/html/switching_hub.html
+http://ryu-zhdoc.readthedocs.org/en/latest/components.html#executables
+http://ryu-zhdoc.readthedocs.org/en/latest/snort_integrate.html
+
+host
+TTA:  0.001726 	TTA Av:  0.00136134260422 
+TTA:  0.00082 	TTA Av:  0.0011621732133 
+TTA:  0.001751 	TTA Av:  0.00144631107744 
+TTA:  0.000821 	TTA Av:  0.00140362621515 
+TTA:  0.00084 	TTA Av:  0.000772619929806
+
+station 0
+TTA:  0.003451 	TTA Av:  0.00235019377859 
+TTA:  0.002841 	TTA Av:  0.00226359493651 
+TTA:  0.002175 	TTA Av:  0.00150090767049 
+TTA:  0.00253 	TTA Av:  0.00185285334006 
+TTA:  0.002812 	TTA Av:  0.00223761624368 
+
+Station 4
+TTA:  0.004102 	TTA Av:  0.00302293512448
+TTA:  0.002276 	TTA Av:  0.00148346721587 
+TTA:  0.002718 	TTA Av:  0.0016679069249 
+TTA:  0.002557 	TTA Av:  0.00299791333099 
+TTA:  0.00342 	TTA Av:  0.00234232587264 
+TTA:  0.003991 	TTA Av:  0.00275606882348
+
+host 1
+TTA:  0.001548 	TTA Av:  0.00113142214384 
+TTA:  0.000674 	TTA Av:  0.000735683799875 
+TTA:  0.001433 
+	TTA Av:  0.00101484489351 
+TTA:  0.001399 	TTA Av:  0.0012793182079
+TTA:  0.001682 	TTA Av:  0.0012021809305 
+
+
+
+
+
